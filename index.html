@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yes, we love you too</title>
+  <meta name="description" content="A sweet little note with a gentle nudge to get back to work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --fg: #ffffff;
+      --muted: rgba(255,255,255,0.75);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 18px;
+    }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--fg);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .content {
+      max-width: 700px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      margin: 20px 0 16px 0;
+      font-size: clamp(28px, 5vw, 52px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    p.lead {
+      margin: 20px 0;
+      font-size: clamp(16px, 2.4vw, 20px);
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    img.cover {
+      max-width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      background: linear-gradient(135deg, #ffd166, #70e1f5);
+      color: #1a1a1a;
+      box-shadow: 0 8px 24px rgba(255, 209, 102, 0.32);
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* Floating hearts */
+    .floaters { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .heart { position: absolute; opacity: .18; filter: blur(1px); }
+    .heart svg { width: 24px; height: 24px; fill: #ff6b81; }
+
+    @keyframes drift {
+      from { transform: translateY(0) scale(1); }
+      to { transform: translateY(-120vh) scale(1.4); }
+    }
+
+    .heart:nth-child(1) { left: 10%; bottom: -10vh; animation: drift 18s linear infinite; }
+    .heart:nth-child(2) { left: 30%; bottom: -15vh; animation: drift 22s linear infinite 2s; }
+    .heart:nth-child(3) { left: 55%; bottom: -12vh; animation: drift 20s linear infinite 1s; }
+    .heart:nth-child(4) { left: 78%; bottom: -20vh; animation: drift 26s linear infinite 3s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .heart { display: none; }
+      .btn:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <img src="https://images.rumsan.com/fa8f7e6d-9b11-4ee1-cbd5-5b3fa1da7700/public" alt="Cover Image" class="cover" />
+    <h1>Yes, we love you too</h1>
+    <p class="lead">
+      Nijju, thank you for visiting this page to show your love. We are always here for you. Now please go back to focus on your work.
+    </p>
+    <a class="btn" href="javascript:history.length>1?history.back():void(0)" onclick="if(history.length<=1){window.close?.()}">
+      ← Back to work
+    </a>
+    <footer>Made with kindness • Have a wonderful day</footer>
+  </div>
+
+  <div class="floaters" aria-hidden="true">
+    <div class="heart" style="left:12%; animation-duration: 18s;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-6.716-4.313-9.193-8.19C1.09 10.42 2.173 7 5.378 6.183A5.02 5.02 0 0 1 12 8a5.02 5.02 0 0 1 6.622-1.817c3.205.817 4.288 4.238 2.57 6.628C18.716 16.687 12 21 12 21Z"/></svg>
+    </div>
+    <div class="heart" style="left:34%; animation-duration: 21s;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-6.716-4.313-9.193-8.19C1.09 10.42 2.173 7 5.378 6.183A5.02 5.02 0 0 1 12 8a5.02 5.02 0 0 1 6.622-1.817c3.205.817 4.288 4.238 2.57 6.628C18.716 16.687 12 21 12 21Z"/></svg>
+    </div>
+    <div class="heart" style="left:62%; animation-duration: 24s;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-6.716-4.313-9.193-8.19C1.09 10.42 2.173 7 5.378 6.183A5.02 5.02 0 0 1 12 8a5.02 5.02 0 0 1 6.622-1.817c3.205.817 4.288 4.238 2.57 6.628C18.716 16.687 12 21 12 21Z"/></svg>
+    </div>
+    <div class="heart" style="left:82%; animation-duration: 27s;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-6.716-4.313-9.193-8.19C1.09 10.42 2.173 7 5.378 6.183A5.02 5.02 0 0 1 12 8a5.02 5.02 0 0 1 6.622-1.817c3.205.817 4.288 4.238 2.57 6.628C18.716 16.687 12 21 12 21Z"/></svg>
+    </div>
+  </div>
+</body>
+</html>
